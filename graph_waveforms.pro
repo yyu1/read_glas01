@@ -6,7 +6,7 @@ lead10plot = intarr(2)
 trail10plot = intarr(2)
 leadplot = intarr(2)
 trailplot = intarr(2)
-for i=0, 543 do height[i] = 543-i
+for i=0, 543 do height[i] = float(543-i) * 0.15
 
 
 for i=1, 202 do begin
@@ -20,16 +20,16 @@ for i=1, 202 do begin
 
 	calc_glas, i_rng_wf, i_bgmean, i_bgsdev, extend, leadbin, trailbin, lead10bin, trail10bin
 
-	lead10plot[*] = 543-lead10bin
-	trail10plot[*] = 543-trail10bin
-	leadplot[*] = 543-leadbin
-	trailplot[*] = 543-trailbin
+	lead10plot[*] = float(543-lead10bin) * 0.15
+	trail10plot[*] = float(543-trail10bin) * 0.15
+	leadplot[*] = float(543-leadbin) * 0.15
+	trailplot[*] = float(543-trailbin) * 0.15
 
   cgPlot, i_rng_wf, height, $
     Color='red', $
     Title=rec_string, $
     XTitle='Return Power Count', $
-    YTitle='Height Count', $
+    YTitle='Height (m)', $
     Position=[0.125, 0.125, 0.9, 0.925]
 
 	cgPlot, thresh, height, $
